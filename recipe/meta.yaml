@@ -18,9 +18,11 @@ requirements:
   host:
     - python
     - pip
+    - zope
   run:
     - python
     - setuptools
+    - zope
 
 test:
   imports:
