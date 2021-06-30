@@ -19,6 +19,8 @@ requirements:
     - python
     - pip
     - zope
+    - setuptools
+    - wheel
   run:
     - python
     - setuptools
