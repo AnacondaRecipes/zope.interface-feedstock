@@ -1,4 +1,4 @@
-{% set version = "5.3.0" %}
+{% set version = "5.4.0" %}
 
 package:
   name: zope.interface
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/z/zope.interface/zope.interface-{{ version }}.tar.gz
-  sha256: b18a855f8504743e0a2d8b75d008c7720d44e4c76687e13f959e35d9a13eb397
+  sha256: 5dba5f530fec3f0988d83b78cc591b58c0b6eb8431a85edd1569a0539a8a5a0e
 
 build:
   number: 0
@@ -19,6 +19,8 @@ requirements:
     - python
     - pip
     - zope
+    - setuptools
+    - wheel
   run:
     - python
     - setuptools
@@ -39,7 +41,7 @@ test:
     - pip
 
 about:
-  home: http://docs.zope.org/zope.interface/
+  home: https://github.com/zopefoundation/zope.interface
   license: ZPL-2.1
   license_family: Other
   license_file: LICENSE.txt
@@ -47,7 +49,7 @@ about:
   description: |
     Provides an implementation of object interfaces for Python.Interfaces are objects
     that specify the external behavior of objects that provide them.
-  doc_url: http://docs.zope.org/zope.interface/
+  doc_url: https://zopeinterface.readthedocs.io/en/latest/
   doc_source_url: https://github.com/zopefoundation/zope.interface//blob/master/docs/index.rst
   dev_url: https://github.com/zopefoundation/zope.interface
 
