@@ -1,12 +1,13 @@
-{% set version = "7.1.1" %}
+{% set name = "zope.interface" %}
+{% set version = "8.0.1" %}
 
 package:
   name: zope.interface
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/z/zope.interface/zope.interface-{{ version }}.tar.gz
-  sha256: 4284d664ef0ff7b709836d4de7b13d80873dc5faeffc073abdb280058bfac5e3
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/zope_interface-{{ version }}.tar.gz
+  sha256: eba5610d042c3704a48222f7f7c6ab5b243ed26f917e2bc69379456b115e02d1
 
 build:
   number: 0
@@ -14,6 +15,7 @@ build:
 
 requirements:
   build:
+    - {{ stdlib('c') }}
     - {{ compiler('c') }}
   host:
     - python
@@ -30,11 +32,30 @@ test:
   imports:
     - zope
     - zope.interface
+    - zope.interface.adapter
+    - zope.interface.advice
     - zope.interface.common
-    - zope.interface.common.tests
+    - zope.interface.common.idatetime
+    - zope.interface.common.interfaces
     - zope.interface.common.mapping
-    - zope.interface._zope_interface_coptimizations  # [python_impl != "pypy"]
+    - zope.interface.common.sequence
+    - zope.interface.declarations
+    - zope.interface.document
+    - zope.interface.exceptions
+    - zope.interface.interface
+    - zope.interface.interfaces
+    - zope.interface.registry
+    - zope.interface.ro
     - zope.interface.tests
+    - zope.interface.tests.idummy
+    - zope.interface.tests.m1
+    - zope.interface.tests.test_declarations
+    - zope.interface.tests.test_exceptions
+    - zope.interface.tests.test_interface
+    # No module named 'zope.testing'
+    #- zope.interface.tests.test_ro
+    - zope.interface.tests.test_sorting
+    - zope.interface.verify
   commands:
     - pip check
   requires:
@@ -56,3 +77,7 @@ extra:
   recipe-maintainers:
     - isuruf
     - ocefpaf
+  skip-lints:
+    - python_build_tool_in_run
+    - python_build_tools_in_host
+    - host_section_needs_exact_pinnings
