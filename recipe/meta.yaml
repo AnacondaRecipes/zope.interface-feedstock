@@ -21,7 +21,6 @@ requirements:
   host:
     - python
     - pip
-    - zope
     - setuptools
     - wheel
   run:
