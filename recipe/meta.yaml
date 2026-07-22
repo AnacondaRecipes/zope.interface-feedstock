@@ -80,6 +80,5 @@ extra:
     - isuruf
     - ocefpaf
   skip-lints:
-    - python_build_tool_in_run
     - python_build_tools_in_host
     - host_section_needs_exact_pinnings
